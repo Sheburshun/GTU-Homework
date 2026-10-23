@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Task Tracker | GTU</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+ <div class="page">
+  <header class="site-header"><div class="brand"><img src="/static/gtu-logo.png" alt="Georgian Technical University logo"><span>GEORGIAN TECHNICAL UNIVERSITY</span></div><div class="header-right"><span class="dot"></span> STUDENT ORGANIZER <span class="year">2026 / 2027</span></div></header>
+  <section class="hero"><div class="eyebrow">YOUR ACADEMIC SPACE <span class="line"></span> PLAN • FOCUS • ACHIEVE</div><h1>Student <em>Task Tracker.</em></h1><p>A simple space to organize your coursework, stay ahead of deadlines, and make every semester count.</p><div class="hero-buttons"><button class="primary" id="new-task">＋ &nbsp; Add new task</button><span id="total-count">0 tasks across 2 semesters</span></div></section>
+  <main>
+   <section class="semester" data-semester="1"><div class="semester-head"><div><span class="semester-kicker">ACADEMIC YEAR / 01</span><h2>First semester <span class="count" id="count-1">0 tasks</span></h2></div><button class="secondary add-sem" data-semester="1">＋ Add task</button></div><div class="task-table"><div class="table-heading"><span>TASK / DESCRIPTION</span><span>DEADLINE</span><span>STATUS</span><span>ACTIONS</span></div><div id="tasks-1"></div></div></section>
+   <section class="semester" data-semester="2"><div class="semester-head"><div><span class="semester-kicker">ACADEMIC YEAR / 02</span><h2>Second semester <span class="count" id="count-2">0 tasks</span></h2></div><button class="secondary add-sem" data-semester="2">＋ Add task</button></div><div class="task-table"><div class="table-heading"><span>TASK / DESCRIPTION</span><span>DEADLINE</span><span>STATUS</span><span>ACTIONS</span></div><div id="tasks-2"></div></div></section>
+  </main>
+  <footer>GTU <span>© 2026 · STAY ON TRACK.</span></footer>
+ </div>
+ <dialog id="task-dialog"><form id="task-form" novalidate><div class="dialog-top"><div><span class="semester-kicker">STUDENT ORGANIZER</span><h3 id="dialog-heading">New task</h3></div><button class="icon-button" type="button" id="close-dialog" aria-label="Close">✕</button></div><label for="title">Task title <b>*</b> <small id="title-count">0/128</small></label><input id="title" name="title" maxlength="128" required placeholder="e.g. Submit physics assignment"><label for="description">Description <small id="description-count">0/500</small></label><textarea id="description" name="description" maxlength="500" rows="4" placeholder="Add a few details (optional)"></textarea><div class="form-row"><div><label for="deadline">Deadline <span>(optional)</span></label><input id="deadline" name="deadline" type="date"></div><div><label for="semester-select">Semester <b>*</b></label><select name="semester" id="semester-select" required><option value="1">First semester</option><option value="2">Second semester</option></select></div></div><p class="error" id="form-error" role="alert"></p><div class="form-actions"><button type="button" class="secondary" id="cancel-dialog">Cancel</button><button type="submit" class="primary">Save task →</button></div></form></dialog>
+ <div id="notice" role="status" aria-live="polite"></div>
+ <script src="/static/app.js"></script>
+</body></html>
